@@ -62,6 +62,19 @@ export default {
         this.$router.push('/home')
       }
       )
+    },
+    sleep (time) {
+      return new Promise((resolve) => setTimeout(resolve, time))
+    },
+    async getQueryApplyList () {
+      await this.sleep(100).then(() => {
+        console.log('awake')
+        return '1'
+      })
+    },
+    async agreeAddProdInfo () {
+      const num = await this.getQueryApplyList()
+      console.log(num)
     }
   }
 }
